@@ -144,7 +144,7 @@ function IntroSection() {
               <img
                 src={"/assets/images/MyPic.png"}
                 alt="ProfilePic"
-                className="w-full max-w-sm md:max-w-none rounded-full shadow-xl ring-1 ring-gray-400/10"
+                className="w-full max-w-sm md:max-w-none rounded-full shadow-lg ring-1 ring-gray-400/10"
                 width={250}
                 height={250}
               />
