@@ -75,7 +75,7 @@ function ProjectsComponent() {
         Projects
       </h2>
       <div className="mx-auto max-w-6xl lg:max-w-6xl flex justify-center flex-wrap sm:flex-nowrap sm:flex-col">
-        {projects?.map((project, index) => {
+        {projects.map((project, index) => {
           return <ProjectCard key={index} projectDetails={project} />;
         })}
       </div>

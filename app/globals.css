@@ -55,3 +55,39 @@ body {
   border-color: #ffffff;
   border-width: 2px;
 }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 300px; /* Adjust width as needed */
+  height: 400px; /* Ensure all cards have the same height */
+  margin: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.project-card-logo img {
+  max-width: 100%;
+  max-height: 100px; /* Adjust max height as needed */
+  margin-bottom: 16px;
+}
+
+.project-card-content {
+  flex-grow: 1;
+}
+
+.project-card-title,
+.project-card-tech-stack,
+.project-card-description {
+  text-align: center;
+}
+
+.project-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
