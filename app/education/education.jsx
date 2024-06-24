@@ -51,9 +51,6 @@ export default function EducationComponent() {
         Education
       </h2>
       <div className="mx-auto max-w-6xl lg:max-w-6xl">
-        {/* <p className="my-8 text-justify">
-            {`" A Full Stack Developer with a rich academic background from George Mason University, I specialize in bringing web and mobile applications to life. My toolkit is stocked with advanced technologies such as React, React Native, Node.js, and more, ensuring high performance and captivating user experiences. My journey is marked by a commitment to excellence, leadership in team settings, and a continuous pursuit of groundbreaking projects. Join me in forging digital pathways that resonate with creativity, precision, and endless possibilities. Let’s transform ideas into reality, together."`}
-          </p> */}
         {educationDetails.map((education, index) => {
           return (
             <div

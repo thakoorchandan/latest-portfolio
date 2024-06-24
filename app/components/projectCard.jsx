@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 function ProjectCard(props) {
-  const { name, imageUrl, link, techStack, description } = props.projectDetails;
+  const { name, imageUrl, link, techStack, description, github } = props.projectDetails;
   return (
     <div className="w-72 h-auto shadow-lg flex flex-col justify-between items-center m-8 p-6 relative group dark:border-2 border-white rounded">
       <img src={imageUrl} alt="skill" className="w-full h-48 object-cover rounded-md mb-4"></img>
@@ -13,6 +13,14 @@ function ProjectCard(props) {
       <div className="text-[12px] text-black dark:text-white py-2 text-center">
         {description}
       </div>
+      <a
+        href={github ? github : ""}
+        rel="noopener"
+        target="_blank"
+        className="text-black text-[16px] underline font-bold dark:text-white mt-4"
+      >
+        {github ? "Github" : "Private Repo"}
+      </a>
       <a
         href={link}
         rel="noopener"
