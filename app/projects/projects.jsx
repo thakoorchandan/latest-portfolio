@@ -13,6 +13,16 @@ function ProjectsComponent() {
         "My project includes a user-friendly interface with visually appealing elements. I utilized the latest web development practices to create a modern and efficient application",
     },
     {
+      name: "Chat NBX",
+      imageUrl:
+        "/assets/images/ChatGptClone.png",
+      link: "https://chatgpt-gn6b.onrender.com/login",
+      github: "https://github.com/thakoorchandan/ChatGPT",
+      techStack: "HTML, CSS, JavaScript, Next.Js, Tailwind CSS, Material UI, Bootstrap, Supabase, Vector DB",
+      description:
+        "Nimble.AI is a ChatGPT clone with enhanced features for makers built on top of using Next.js, TypeScript, Supabase, Jotai and Tailwind CSS.",
+    },
+    {
       name: "Movie Base",
       imageUrl:
         "/assets/images/MovieBase.png",
