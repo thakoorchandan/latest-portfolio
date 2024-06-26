@@ -3,7 +3,7 @@ const experience = [
   {
     companyName: "Shanti Infosoft LLP",
     title: "MERN Stack Engineer",
-    duration: "Jan 2024 – Present",
+    duration: "Jan 2024 – May 2024",
     location: "Indore, Madhya Pradesh",
     description: [
       "Currently working as a MERN Stack Developer at Shanti Infosoft, focusing on the BatterSea Edtech Platform and NimbleFi Central Banking Project (Educational & Financial Technologies)",

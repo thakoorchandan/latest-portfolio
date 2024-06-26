@@ -37,7 +37,7 @@ function Navbar() {
     <div className="text-black dark:text-white bg-white dark:bg-black">
       <header className="fixed bg-white inset-x-0 top-0 z-50">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-4 lg:px-8"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
