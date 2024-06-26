@@ -41,7 +41,7 @@ export default function Home() {
 
       window.scrollTo({
         top: startOffset + offsetTop * ease(progress),
-        behavior: "auto",
+        behavior: "auto"
       });
 
       if (elapsed < duration) {
@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24">
+      <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24 overflow-hidden">
         <section className="d-block px-2 py-14 w-9/12 sm:w-full sm:pt-0 sm:pb-18 lg:px-4">
           <IntroSection />
         </section>
