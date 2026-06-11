@@ -14,11 +14,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} min-h-screen bg-background text-foreground antialiased selection:bg-accent/20`}
+      >
         <Providers>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </Providers>
       </body>

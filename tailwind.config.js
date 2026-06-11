@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: "",
-  important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,6 +8,16 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        background: "rgb(var(--background) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        "surface-2": "rgb(var(--surface-2) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        "accent-soft": "rgb(var(--accent-soft) / <alpha-value>)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -19,19 +27,11 @@ module.exports = {
     screens: {
       // phones
       sm: { max: "767px" },
-      //tablets
+      // tablets
       md: { min: "768px", max: "992px" },
-      //small desktops
+      // small desktops and up
       lg: { min: "993px" },
-      //desktops
-      // xl: { min: "1280px", max: "1535px" },
-      // //large desktops
-      // "2xl": { min: "1536px" },
     },
-    // boxShadow: {
-    //   white: "0 1px 2px 0 #ffffff, 0 1px 2px 0 #ffffff",
-    //   // black: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
-    // },
   },
   plugins: [],
 };

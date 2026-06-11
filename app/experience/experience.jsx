@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import SectionHeading from "../components/sectionHeading";
+import Reveal from "../components/reveal";
+
 const experience = [
   {
     companyName: "Shanti Infosoft LLP",
@@ -6,10 +9,10 @@ const experience = [
     duration: "Jan 2024 – May 2024",
     location: "Indore, Madhya Pradesh",
     description: [
-      "Currently working as a MERN Stack Developer at Shanti Infosoft, focusing on the BatterSea Edtech Platform and NimbleFi Central Banking Project (Educational & Financial Technologies)",
-      "nvolved in the development of the BatterSea Edtech platform, focusing on creating an interactive and user-friendly educational experience.",
-      "Contributing to the NimbleFi Central Banking project, developing robust and secure banking solutions.",
-      "Utilizing a diverse tech stack including PostgreSQL, DBeaver, React.js, Typescript, Redux, Node.js, Knex.js, Express, HTML, CSS, SCSS, Bootstrap, and Tailwind CSS to deliver scalable and high-performance web applications.",
+      "Worked as a MERN Stack Developer focusing on the BatterSea Edtech Platform and the NimbleFi Central Banking project (Educational & Financial Technologies).",
+      "Involved in developing the BatterSea Edtech platform, focusing on an interactive and user-friendly educational experience.",
+      "Contributed to the NimbleFi Central Banking project, developing robust and secure banking solutions.",
+      "Utilized a diverse tech stack including PostgreSQL, DBeaver, React.js, TypeScript, Redux, Node.js, Knex.js, Express, HTML, CSS, SCSS, Bootstrap, and Tailwind CSS to deliver scalable, high-performance web applications.",
     ],
     logo: "/assets/images/ShantiInfosoft.png",
   },
@@ -17,20 +20,19 @@ const experience = [
     companyName: "Tekion Corp",
     title: "Associate Software Engineer",
     duration: "Feb 2022 – Sep 2023",
-    location: "Chennai, Tamilnadu / Bangalore, Karnataka",
+    location: "Chennai / Bangalore",
     description: [
-      "Contributed to the design and development of end-to-end UI flow for Vehicle Inventory management in the automotive retail industry.",
-      "Worked on the development and integration of advanced features in Tekion's ARC and DRP Vehicle Inventory module using React.",
-      "Conducted Knowledge Transfer (KT) sessions for new team members in the Vehicle Inventory team, ensuring a solid understanding of project requirements.",
+      "Contributed to the design and development of end-to-end UI flows for Vehicle Inventory management in the automotive retail industry.",
+      "Worked on development and integration of advanced features in Tekion's ARC and DRP Vehicle Inventory module using React.",
+      "Conducted Knowledge Transfer (KT) sessions for new team members, ensuring a solid understanding of project requirements.",
       "Addressed and implemented critical hotfixes to ensure optimal application performance and reliability.",
-      "Guided freshers through the project's codebase, assisting in task selection and code comprehension for effective onboarding.",
       "Developed custom reusable React components and SCSS mixins for the organization's design system.",
       "Created a dynamic table solution for enhanced data visualization and interaction.",
-      "Resolved critical production issues promptly with browser debugging techniques.",
-      "Collaborated with cross-functional teams for seamless feature integration and user experience.",
-      "Conducted thorough unit and integration tests for application reliability and user satisfaction.",
-      "Employed Agile methodologies for efficient project management, feature delivery, and adaptation to changes.",
-      "Actively participated in code reviews and provided constructive feedback to peers, fostering a culture of continuous improvement and coding excellence.",
+      "Resolved critical production issues promptly using browser debugging techniques.",
+      "Collaborated with cross-functional teams for seamless feature integration and great user experience.",
+      "Conducted thorough unit and integration tests for application reliability.",
+      "Employed Agile methodologies for efficient project management and feature delivery.",
+      "Actively participated in code reviews, fostering a culture of continuous improvement.",
     ],
     logo: "/assets/images/Tekion.png",
   },
@@ -39,65 +41,49 @@ const experience = [
 function ExperienceComponent() {
   return (
     <>
-      <h2 className="text-3xl mx-auto max-w-6xl font-bold mt-4 py-2 sm:text-2xl">
-        Experience
-      </h2>
-      <div className="mx-auto max-w-6xl lg:max-w-6xl">
-        {experience.map((experience, index) => {
-          return (
-            <div
-              key={index}
-              className="mt-8 flex shadow-lg rounded-xl p-8 w-100 sm:flex-col dark:shadow-white"
-            >
-              <div className=" sm:flex-row sm:w-full sm:border-0 sm:mb-4 dark:border-white">
-                <div className="flex items-center sm:flex-col sm:justify-center">
-                  <img
-                    src={experience.logo}
-                    alt={experience.companyName}
-                    className="w-auto h-16 object-cover sm:flex-1 sm:mb-0 dark:ring-white sm:object-none sm:h-auto"
-                    width={100}
-                    height={100}
-                  />
-                  {/* <p className="ml-8 text-2xl font-bold mt-1  sm:text-xl">
-                    {experience.title}
-                  </p> */}
-                  <div className="ml-8 sm:ml-0 sm:mt-4 sm:items-center">
-                    <p className="text-lg font-semibold sm:text-m">
-                      {experience.companyName} -{" "}
-                      <span className="font-medium text-base">
-                        {experience.location}
-                      </span>
+      <Reveal>
+        <SectionHeading eyebrow="Where I've worked" title="Experience" />
+      </Reveal>
+      <div className="flex flex-col gap-6">
+        {experience.map((exp, index) => (
+          <Reveal key={index} delay={index * 120}>
+            <div className="glass glass-hover p-8 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white p-2 shadow-inner ring-1 ring-black/5">
+                    <img
+                      src={exp.logo}
+                      alt={exp.companyName}
+                      className="h-full w-full object-contain"
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold sm:text-lg">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm font-medium text-muted">
+                      {exp.companyName} · {exp.location}
                     </p>
-                    <p className="italic sm:text-sm ">{experience.duration}</p>
                   </div>
                 </div>
-                <div className="pt-4">
-                  <p className="text-2xl font-bold mt-1  sm:text-xl">
-                    {experience.title}
-                  </p>
-                  {/* <p className="text-lg font-semibold sm:text-m">
-                    {experience.companyName} -{" "}
-                    <span className="font-medium text-base">
-                      {experience.location}
-                    </span>
-                  </p>
-                  <p className="italic sm:text-sm">{experience.duration}</p> */}
-                </div>
-                <div className="pt-4">
-                  <ul className="list-disc">
-                    {experience.description.map((desc, index) => {
-                      return (
-                        <li key={index} className="sm:text-m">
-                          {desc}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <span className="glass-soft rounded-full px-3 py-1 text-sm font-semibold text-accent">
+                  {exp.duration}
+                </span>
               </div>
+
+              <ul className="mt-6 flex flex-col gap-3">
+                {exp.description.map((desc, i) => (
+                  <li key={i} className="flex gap-3 text-muted">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-accent to-accent-soft" />
+                    <span>{desc}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          );
-        })}
+          </Reveal>
+        ))}
       </div>
     </>
   );

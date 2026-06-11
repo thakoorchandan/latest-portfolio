@@ -1,9 +1,11 @@
 import ProjectCard from "../components/projectCard";
+import SectionHeading from "../components/sectionHeading";
+import Reveal from "../components/reveal";
 
 function ProjectsComponent() {
   const projects = [
     {
-      name: "Managent Dashboard",
+      name: "Management Dashboard",
       imageUrl:
         "/assets/images/Panorbit.png",
       link: "https://panorbit-xi.vercel.app/",
@@ -81,13 +83,19 @@ function ProjectsComponent() {
   ];
   return (
     <>
-      <h2 className="text-3xl mx-auto max-w-6xl font-bold mt-4 py-2 sm:text-2xl">
-        Projects
-      </h2>
-      <div className="mx-auto max-w-6xl lg:max-w-6xl flex justify-center flex-wrap sm:flex-nowrap sm:flex-col">
-        {projects.map((project, index) => {
-          return <ProjectCard key={index} projectDetails={project} />;
-        })}
+      <Reveal>
+        <SectionHeading
+          eyebrow="Things I've built"
+          title="Projects"
+          subtitle="A selection of applications I've designed and engineered."
+        />
+      </Reveal>
+      <div className="grid grid-cols-3 gap-6 sm:grid-cols-1 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <Reveal key={index} delay={(index % 3) * 100} className="h-full">
+            <ProjectCard projectDetails={project} />
+          </Reveal>
+        ))}
       </div>
     </>
   );

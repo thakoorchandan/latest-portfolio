@@ -1,37 +1,66 @@
 /* eslint-disable @next/next/no-img-element */
 function ProjectCard(props) {
-  const { name, imageUrl, link, techStack, description, github } = props.projectDetails;
+  const { name, imageUrl, link, techStack, description, github } =
+    props.projectDetails;
+
+  const techList = techStack
+    .split(",")
+    .map((t) => t.trim())
+    .filter(Boolean);
+
   return (
-    <div className="project-card w-72 h-auto shadow-lg flex flex-col justify-between items-center m-8 p-6 relative group dark:border-2 border-white rounded">
-      <img src={imageUrl} alt="skill" className="project-card-logo w-full h-48 object-cover rounded-md mb-4" />
-      <div className="project-card-content flex-grow">
-        <div className="project-card-title text-[20px] text-black dark:text-white font-bold py-2 text-center">
-          {name}
-        </div>
-        <div className="project-card-tech-stack text-[14px] text-black dark:text-white font-semibold text-center mb-2">
-          {techStack}
-        </div>
-        <div className="project-card-description text-[12px] text-black dark:text-white py-2 text-center">
-          {description}
-        </div>
+    <div className="glass glass-hover group flex h-full w-full flex-col overflow-hidden">
+      <div className="relative h-44 w-full overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={name}
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
-      <div className="project-card-actions flex flex-col items-center mt-4">
-        <a
-          href={github ? github : ""}
-          rel="noopener"
-          target="_blank"
-          className="text-black text-[16px] underline font-bold dark:text-white mb-2"
-        >
-          {github ? "Github" : "Private Repo"}
-        </a>
-        <a
-          href={link}
-          rel="noopener"
-          target="_blank"
-          className="text-black text-[16px] underline font-bold dark:text-white"
-        >
-          Link
-        </a>
+
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="text-lg font-bold">{name}</h3>
+
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {techList.map((tech, i) => (
+            <span
+              key={i}
+              className="rounded-md bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <p className="mt-3 line-clamp-4 flex-1 text-sm text-muted">
+          {description}
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <a
+            href={link}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="btn-primary flex-1 text-sm"
+          >
+            Live Demo
+          </a>
+          {github ? (
+            <a
+              href={github}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="btn-ghost text-sm"
+            >
+              GitHub
+            </a>
+          ) : (
+            <span className="btn-ghost cursor-default text-sm opacity-70">
+              Private
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

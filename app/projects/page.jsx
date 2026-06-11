@@ -1,15 +1,9 @@
 import ProjectsComponent from "./projects";
 
-export default function Education() {
+export default function ProjectsPage() {
   return (
-    <div className="text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between">
-        <section className="d-block px-6 py-8 sm:py-4 lg:px-8">
-          <div className="p-2 mt-24">
-            <ProjectsComponent />
-          </div>
-        </section>
-      </div>
+    <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-28 sm:px-5 lg:px-8">
+      <ProjectsComponent />
     </div>
   );
 }
